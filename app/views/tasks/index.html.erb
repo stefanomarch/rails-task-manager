@@ -1,0 +1,26 @@
+
+
+<div class="container">
+  <h1 class="title">Task list</h1>
+
+  <ol id='class-list'>
+    <% @tasks.each do |task| %>
+    <div class="task-card">
+      <li class="task link"><%= link_to task.title, task_path(task.id) ,class: "link"%></li>
+      <%= form_for(task) do |f| %>
+      <%= f.label :done?, class: "label" %>
+      <%=f.check_box :completed %>
+      <%= f.submit "mark as done", class: "btn-small" %>
+      <% end %>
+    </div>
+    <% end %>
+  </ol>
+  <%= link_to 'create a new Task', new_path, class: "btn link" %>
+</div>
+
+
+
+
+
+
+

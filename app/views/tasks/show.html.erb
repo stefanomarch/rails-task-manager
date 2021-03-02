@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="title">Details</h1>
+  <h3><%= @task.details %></h3>
+
+  <%= link_to 'back to the list', root_path, class: "btn link" %>
+
+  <%= link_to 'edit this task', edit_path, class: "btn link" %>
+
+  <!-- prima vai all action destroy (nel method , una volta eseguito redirect al root) -->
+  <%= link_to 'destroy', task_path(@task), method: :delete, data: { confirm: "Are you sure?" }, class: "btn link" %>
+</div>
+
